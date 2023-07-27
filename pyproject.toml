@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "ioc-tracer"
+version = "0.1.0"
+description = ""
+authors = ["bitsima <betulse42@gmail.com>"]
+readme = "README.md"
+packages = [{include = "ioc_tracer"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.100.0"
+sqlalchemy = "^2.0.19"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
