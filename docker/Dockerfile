@@ -13,7 +13,7 @@ RUN poetry config virtualenvs.create false
 RUN poetry install --no-interaction --no-ansi
 
 # Copy the entire project directory into the container
-COPY . /app/
+COPY .. /app/
 
 # Expose the port that FastAPI is running on (default is 8000)
 EXPOSE 8000
