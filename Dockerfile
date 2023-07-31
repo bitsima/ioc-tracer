@@ -4,16 +4,13 @@ FROM python:3.11
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy the Poetry files
-COPY pyproject.toml poetry.lock
+# Copy the entire project directory into the container
+COPY . /app/
 
 # Install the project dependencies
 RUN pip install poetry
 RUN poetry config virtualenvs.create false
 RUN poetry install --no-interaction --no-ansi
-
-# Copy the entire project directory into the container
-COPY .. /app/
 
 # Expose the port that FastAPI is running on (default is 8000)
 EXPOSE 8000
