@@ -1,4 +1,4 @@
-raw_data/
+raw_data/*
 *.json
 .vscode/
 # Byte-compiled / optimized / DLL files
