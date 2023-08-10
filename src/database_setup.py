@@ -5,7 +5,6 @@ from models.file_model import File
 from models.file_hash_model import FileHash
 from models.domain_model import Domain
 from models.ip_address_model import IPAddress
-from models.yara_rule_model import YaraRule
 from ..config import DATABASE_URL
 
 Base = orm.declarative_base()

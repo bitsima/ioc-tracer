@@ -1,5 +1,5 @@
 from enum import Enum
-from typing import Optional
+from typing import Optional, Dict
 from pydantic import BaseModel
 
 
@@ -9,6 +9,7 @@ class IOCTypes(str, Enum):
     file_hash = "file_hash"
     domain = "domain"
     ip_address = "ip_address"
+    url_address = "url_address"
 
 
 class IOCCreate(BaseModel):
@@ -23,6 +24,8 @@ class IOCUpdate(BaseModel):
 class File(BaseModel):
     file_name: str
     file_path: str
+
+    analysis_results = Dict
 
 
 class FileHash(BaseModel):
@@ -41,6 +44,6 @@ class IPAddress(BaseModel):
     ip_address: str
 
 
-class YaraRule(BaseModel):
-    rule_name: str
-    rule_content: str
+class UrlAddress(BaseModel):
+    url_address_id = int
+    url_address = str
