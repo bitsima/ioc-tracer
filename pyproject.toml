@@ -12,9 +12,6 @@ sqlalchemy = "^2.0.19"
 python-dotenv = "^1.0.0"
 psycopg2 = "^2.9.6"
 requests = "^2.31.0"
-python-magic = "^0.4.27"
-pyexiftool = "^0.5.5"
-pypdf2 = "^3.0.1"
 otxv2 = "^1.5.12"
 
 
