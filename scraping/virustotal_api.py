@@ -62,7 +62,10 @@ def check_domain(domain: str) -> Optional[Tuple[str, str]]:
     response = handle_request(RequestType.DOMAIN, url, domain)
     if response is not None:
         last_analysis_stats = response["data"]["attributes"]["last_analysis_stats"]
-        return last_analysis_stats["malicious"], last_analysis_stats["harmless"]
+        return (
+            f"{last_analysis_stats['malicious']} malicious",
+            f"{last_analysis_stats['harmless']} harmless",
+        )
 
 
 def check_ip(ip_addr: str) -> Optional[Tuple[str, str]]:
@@ -70,7 +73,10 @@ def check_ip(ip_addr: str) -> Optional[Tuple[str, str]]:
     response = handle_request(RequestType.IP, url, ip_addr)
     if response is not None:
         last_analysis_stats = response["data"]["attributes"]["last_analysis_stats"]
-        return last_analysis_stats["malicious"], last_analysis_stats["harmless"]
+        return (
+            f"{last_analysis_stats['malicious']} malicious",
+            f"{last_analysis_stats['harmless']} harmless",
+        )
 
 
 def check_url(url_addr: str) -> Optional[Tuple[str, str]]:
@@ -79,7 +85,10 @@ def check_url(url_addr: str) -> Optional[Tuple[str, str]]:
     if response is not None:
         analysis_id = response["data"]["id"]
         analysis_results = get_analysis_results(analysis_id)
-        return analysis_results["malicious"], analysis_results["harmless"]
+        return (
+            f"{analysis_results['malicious']} malicious",
+            f"{analysis_results['harmless']} harmless",
+        )
 
 
 def check_file_hash(file_hash: str) -> Optional[Tuple[str, str]]:
@@ -87,7 +96,10 @@ def check_file_hash(file_hash: str) -> Optional[Tuple[str, str]]:
     response = handle_request(RequestType.HASH, url, file_hash)
     if response is not None:
         total_votes = response["data"]["total_votes"]
-        return total_votes["malicious"], total_votes["harmless"]
+        return (
+            f"{total_votes['malicious']} malicious",
+            f"{total_votes['harmless']} harmless",
+        )
 
 
 selected = RequestType.HASH
