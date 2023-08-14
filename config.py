@@ -17,6 +17,8 @@ virustotal_api_key = os.getenv("VIRUSTOTAL_API_KEY")
 
 alienvault_api_key = os.getenv("ALIENVAULT_API_KEY")
 
+google_lookup_api_key = os.getenv("GOOGLE_LOOKUP_API_KEY")
+
 db_init_repo = os.getenv("DATABASE_INIT_REPO")
 
 cloned_repo_path = os.getenv("CLONED_REPO_PATH")
