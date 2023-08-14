@@ -1,11 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy import orm
 
-from models.file_model import File
-from models.file_hash_model import FileHash
-from models.domain_model import Domain
-from models.ip_address_model import IPAddress
-from ..config import DATABASE_URL
+from ...config import DATABASE_URL
 
 Base = orm.declarative_base()
 
