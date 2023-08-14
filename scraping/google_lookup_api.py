@@ -38,7 +38,6 @@ def send_request(threat_entry: dict) -> Optional[bool]:
             return False
 
     else:
-        print(f"Request failed with status code: {response.status_code}")
         return None
 
 
